@@ -550,6 +550,8 @@ sub take_snapshots {
 	}
 
 	if (%newsnapsgroup) {
+		# same timestamp for all snapshots
+		my %datestamp = get_date();
 		while ((my $path, my $snapData) = each(%newsnapsgroup)) {
 			my $recursiveFlag = $snapData->{recursive};
 			my $dstHandling = $snapData->{handleDst};
@@ -558,8 +560,6 @@ sub take_snapshots {
 			my $dataset = $datasets[0];
 			my @types = @{$snapData->{types}};
 
-			# same timestamp for all snapshots types (daily, hourly, ...)
-			my %datestamp = get_date();
 			my @snapshots;
 
 			foreach my $type (@types) {
