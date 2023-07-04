@@ -17,8 +17,6 @@ use Getopt::Long qw(:config auto_version auto_help);
 use Pod::Usage;       # pod2usage
 use Time::Local;      # to parse dates in reverse
 use Capture::Tiny ':all';
-
-$ENV{TZ} = 'Australia/Melbourne'
 tzset;
 
 my %args = (
