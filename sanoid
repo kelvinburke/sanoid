@@ -9,6 +9,7 @@ my $MINIMUM_DEFAULTS_VERSION = 2;
 
 use strict;
 use warnings;
+use POSIX qw(tzset);
 use Config::IniFiles; # read samba-style conf file
 use Data::Dumper;     # debugging - print contents of hash
 use File::Path 'make_path';
